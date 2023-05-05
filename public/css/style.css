@@ -1,16 +1,59 @@
+/* * {
+  border: 1px dashed rosybrown;
+} */
 
 .embla {
-    overflow: hidden;
-    height: 100%;
+  overflow: hidden;
+  height: 100%;
 }
 .embla__container {
-    display: flex;
-    
+  display: flex;
 }
 .embla__slide {
-    flex: 0 0 100%;
-    min-width: 0;
-    
-    background-color: blanchedalmond;
+  flex: 0 0 100%;
+  min-width: 0;
+  background-color: blanchedalmond;
 }
-  
+
+figure {
+  margin: 0;
+}
+
+iframe {
+  margin-bottom: 1%;
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+.cartel {
+  align-content: center;
+  text-align: center;
+  border: 2rem double grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 250px;
+  margin: 4rem;
+}
+
+.form-contact {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+
+.form-contact input,
+.form-contact textarea {
+  border-color: black;
+}
+
+.seccion {
+  font-family: "Fredericka the Great", Arial, Helvetica, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
