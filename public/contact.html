@@ -24,6 +24,7 @@
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
 
     <script src="script/header.js" type="module"></script>
+    <script src="script/contact.js " type="module"></script>
 
     <header class="sticky-top" id="header">
         <nav class="navbar navbar-expand-lg bg-secondary bg-gradient">
@@ -66,7 +67,7 @@
             </h1>
         </div>
 
-        <form class="form-contact" action="/contact/comment" method="post">
+        <form id="contact" class="form-contact" action="/contact/comment" method="post">
             <label for="name" class="form-label">Nombre</label>
             <input type="text" class="form-control" name="name" id="name">
             <label for="email" class="form-label">Email</label>
@@ -84,7 +85,7 @@
                 Sunscribete al Newsletter
             </h1>
         </div>
-        <form class="form-contact" action="/contact/newsletter" method="post">
+        <form id="newsletter" class="form-contact" action="/contact/newsletter" method="post">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" name="email" id="email">
             <div class="col-md-3">

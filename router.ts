@@ -3,28 +3,34 @@ import { Router } from "https://deno.land/x/oak@v12.4.0/mod.ts";
 const router = new Router();
 router
   .get("/", async (ctx) => {
-    const index = await Deno.readFile(`${Deno.cwd()}/public/index.html`);
-    ctx.response.body = index;
+    const page = await Deno.readFile(`${Deno.cwd()}/public/index.html`);
+    ctx.response.body = page;
     ctx.response.headers.set("Content-Type", "text/html");
   })
   .get("/contact", async (ctx) => {
-    const index = await Deno.readFile(`${Deno.cwd()}/public/contact.html`);
-    ctx.response.body = index;
+    const page = await Deno.readFile(`${Deno.cwd()}/public/contact.html`);
+    ctx.response.body = page;
     ctx.response.headers.set("Content-Type", "text/html");
   })
+  .post("/contact/comment", (ctx) => {
+    ctx.response.body = JSON.stringify("comment");
+  })
+  .post("/contact/newsletter", (ctx) => {
+    ctx.response.body = JSON.stringify("newsletter");
+  })
   .get("/news", async (ctx) => {
-    const index = await Deno.readFile(`${Deno.cwd()}/public/news.html`);
-    ctx.response.body = index;
+    const page = await Deno.readFile(`${Deno.cwd()}/public/news.html`);
+    ctx.response.body = page;
     ctx.response.headers.set("Content-Type", "text/html");
   })
   .get("/event", async (ctx) => {
-    const index = await Deno.readFile(`${Deno.cwd()}/public/event.html`);
-    ctx.response.body = index;
+    const page = await Deno.readFile(`${Deno.cwd()}/public/event.html`);
+    ctx.response.body = page;
     ctx.response.headers.set("Content-Type", "text/html");
   })
   .get("/music", async (ctx) => {
-    const index = await Deno.readFile(`${Deno.cwd()}/public/music.html`);
-    ctx.response.body = index;
+    const page = await Deno.readFile(`${Deno.cwd()}/public/music.html`);
+    ctx.response.body = page;
     ctx.response.headers.set("Content-Type", "text/html");
   })
   .get("/css/:css", async (ctx) => {

@@ -25,6 +25,7 @@
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
 
     <script src="script/header.js" type="module"></script>
+    <script src="script/music.js" type="module"></script>
 
     <header class="sticky-top" id="header">
         <nav class="navbar navbar-expand-lg bg-secondary bg-gradient">
@@ -67,32 +68,32 @@
             </div>
         </div>
         <div class="row">
-            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/l-FDFsHA20w"
+            <iframe id="video1" class="col-md-6" height="300" src="https://www.youtube.com/embed/l-FDFsHA20w"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
 
-            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/bXE6B6Usj6o"
+            <iframe id="video2" class="col-md-6" height="300" src="https://www.youtube.com/embed/bXE6B6Usj6o"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
         </div>
         <div class="row">
-            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/U4lz8MN6MQA"
+            <iframe id="video3" class="col-md-6" height="300" src="https://www.youtube.com/embed/U4lz8MN6MQA"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
 
-            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/CVqsQ-9GLLE"
+            <iframe id="video4" class="col-md-6" height="300" src="https://www.youtube.com/embed/CVqsQ-9GLLE"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/jpw2ebhTSKs"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -118,7 +119,46 @@
                 allowfullscreen>
             </iframe>
         </div>
+        <div class="row">
+            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/x2_xODlUkrA"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/XAqq5yqR-T4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="row">
+            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/Wt-qH7IQMV4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <iframe class="col-md-6" height="315" src="https://www.youtube.com/embed/j6PrrulYHmc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div> -->
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li id="previous" class="page-item disabled hidden">
+                <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item active" id="page1" data-page=1><a class="page-link" href="#">1</a></li>
+            <li class="page-item" id="page2" data-page=2><a class="page-link" href="#">2</a></li>
+            <li class="page-item" id="page3" data-page=3><a class="page-link" href="#">3</a></li>
+            <li class="page-item hidden">
+                <a id="next" class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
     <footer class="conatiner-fluid text-center bg-secondary bg-gradient">
         <a href="/">
             <figure class="figure">
