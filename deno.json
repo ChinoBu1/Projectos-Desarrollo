@@ -1,0 +1,12 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env --watch main.ts",
+    "startdb": "deno run --allow-net --allow-read --allow-env db.ts",
+    "initdb": "deno run --allow-net --allow-read --allow-env initdb.ts"
+  },
+  "scopes": {
+    "https://raw.githubusercontent.com/Zhomart/dex/": {
+      "https://deno.land/std/": "https://deno.land/std@0.177.0/"
+    }
+  }
+}

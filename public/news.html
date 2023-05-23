@@ -11,6 +11,10 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
     <title>The Band</title>
 </head>
@@ -20,9 +24,10 @@
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
 
     <script src="script/header.js" type="module"></script>
+    <script src="script/news.js" type="module"></script>
 
     <header class="sticky-top" id="header">
-        <nav class="navbar navbar-expand-lg bg-secondary bg-gradient">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                     <figure class="figure">
@@ -48,12 +53,55 @@
 
         <div class="embla">
             <div class="embla__container">
-                <div class="embla__slide"><a href="">Entradas ya a la venta</a></div>
+                <div class="embla__slide"><a href="https://twitter.com/TheChalkEaters?ref_src=twsrc%5Etfw"
+                        class="twitter-follow-button" data-show-count="false">Follow @TheChalkEaters</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                    <div style="display: flex; align-content: center;">
+                        Subcribete a nuestro canal de YouTube:
+                        <script src="https://apis.google.com/js/platform.js"></script>
+                        <div class="g-ytsubscribe" data-channelid="UCYSvX0lqo-ZinYNQSHVCqlQ" data-layout="default"
+                            data-count="hidden"></div>
+                    </div>
+                </div>
                 <div class="embla__slide">Slide 2</div>
                 <div class="embla__slide">Slide 3</div>
             </div>
         </div>
     </header>
+
+    <div class="form-news-container">
+        <div class="row">
+            <div class="col">
+                <form id="form-news" class="form-news" method="get">
+                    <label for="start" class="form-label">Posteriores a:</label>
+                    <input type="date" name="start" id="start">
+                    <label for="end" class="form-label">Anteriores a:</label>
+                    <input type="date" name="end" id="end">
+                    <button type="submit" class="btn btn-secondary">Filtrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartel" class="cartel hidden">
+        <h1 class="seccion">
+            No hay noticias en estas fechas
+        </h1>
+    </div>
+
+
+    <div id="contenedor-news" class="container">
+
+    </div>
+
+    <footer class="conatiner-fluid text-center">
+        <a href="/">
+            <figure class="figure">
+                <img src="img/The_Chalkeaters_logo.png" height="60px" alt="The Chakleaters">
+            </figure>
+        </a>
+    </footer>
 
 </body>
 
