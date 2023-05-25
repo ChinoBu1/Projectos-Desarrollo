@@ -2,7 +2,7 @@ import client from "./db.ts";
 
 export default {
   async getAll() {
-    return await client.query(`select * from events`);
+    return await client.query(`select * from events order by start`);
   },
   async get2() {
     return await client.query(

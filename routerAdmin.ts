@@ -1,45 +1,31 @@
 import { Router } from "https://deno.land/x/oak@v12.4.0/mod.ts";
 import type { AppState } from "./server.ts";
+import admins from "./api/admins.ts";
 const routerAdmin = new Router<AppState>();
 
 routerAdmin
   .get("/admin", async (ctx, next) => {
-    const message = await ctx.state.session.get("email") || "";
-    const error = await ctx.state.session.get("error") || "";
-    const failedLoginAttempts = await ctx.state.session.get(
-      "failed-login-attempts",
+    const page = await Deno.readFile(`${Deno.cwd()}/public/admin.html`);
+    ctx.response.body = page;
+    ctx.response.headers.set("Content-Type", "text/html");
+    return next();
+  })
+  .get("/css/:css", async (ctx, next) => {
+    const css = await Deno.readFile(
+      `${Deno.cwd()}/public/css/${ctx.params.css}`,
     );
-    const email = await ctx.state.session.get("email");
-    ctx.response.body = `<!DOCTYPE html>
-    <body>
-        <p>
-            ${message}
-        </p>
-        <p>
-            ${error}
-        </p>
-        <p>
-            ${
-      failedLoginAttempts ? `Failed login attempts: ${failedLoginAttempts}` : ""
+    ctx.response.body = css;
+    ctx.response.headers.set("Content-Type", "text/css");
+    return next();
+  })
+  .get("/admin/:admin", async (ctx, next) => {
+    switch (ctx.params.admin) {
+      case "login":
+        ctx.response.body = await admins.getAdmin(ctx.request.url.searchParams);
+        break;
+      default:
+        break;
     }
-        </p>
-
-        ${
-      email
-        ? `<form id="logout" action="/logout" method="post">
-            <button name="logout" type="submit">Log out ${email}</button>
-        </form>`
-        : `<form id="login" action="/admin" method="post">
-            <p>
-                <input id="email" name="email" type="text" placeholder="you@email.com">
-            </p>
-            <p>
-                <input id="password" name="password" type="password" placeholder="password">
-            </p>
-            <button name="login" type="submit">Log in</button>
-        </form>`
-    }
-    </body>`;
     return next();
   })
   .post("/admin", async (ctx) => {

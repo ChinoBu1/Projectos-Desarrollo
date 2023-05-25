@@ -20,6 +20,16 @@
 </head>
 
 <body>
-    Funciona
+    <script src="script/admin.js " type="module"></script>
+    <div id="admin-login">
+        <p>
+            LOGIN DE ADMINISTRADOR
+        </p>
 
+        <form id="login" action="/admin/login" method="get">
+            <input id="user" name="user" type="text" placeholder="User">
+            <input id="password" name="password" type="password" placeholder="password">
+            <button name="login" type="submit">Log in</button>
+        </form>
+    </div>
 </body>

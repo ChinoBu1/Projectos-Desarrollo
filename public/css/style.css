@@ -146,3 +146,11 @@ li.active a.page-link {
 .toast-body {
   background-color: var(--bs-gray-200);
 }
+
+#admin-login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+}
