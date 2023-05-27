@@ -15,21 +15,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="admin/css/style.css">
     <title>The Band</title>
 </head>
 
 <body>
-    <script src="script/admin.js " type="module"></script>
+    <script src="admin/script/admin.js " type="module"></script>
     <div id="admin-login">
         <p>
             LOGIN DE ADMINISTRADOR
         </p>
 
         <form id="login" action="/admin/login" method="get">
-            <input id="user" name="user" type="text" placeholder="User">
-            <input id="password" name="password" type="password" placeholder="password">
+            <input id="user" name="user" type="text" placeholder="Administrator">
+            <input id="password" name="password" type="password" placeholder="Password">
             <button name="login" type="submit">Log in</button>
         </form>
+    </div>
+    <div class="toast-container position-fixed top-50 start-50 translate-middle">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header ">
+                <strong class="me-auto">The Chakleaters</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body ">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
     </div>
 </body>

@@ -13,7 +13,7 @@ export default {
     );
 
     return await client.query(
-      `select * from admins where user = ? and password = ?`,
+      `select user from admins where user = ? and password = ?`,
       [
         searchParams.get("user"),
         toHashString(hash, "base64"),

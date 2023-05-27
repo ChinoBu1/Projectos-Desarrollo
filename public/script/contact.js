@@ -37,7 +37,12 @@ newsletterForm.addEventListener("submit", async (e) => {
   const rep = await fetch(`/api/newsletter?email=${formData.get("email")}`);
   const email = await rep.json();
   if (email[0]) {
-    alert("Ya esta registrado al newsletter");
+    toastLiveExample.children.item(1).innerHTML =
+      "Ya esta registrardo en el Newsletter";
+    const toastBootstrap =
+      bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+    contactForm.reset();
+    toastBootstrap.show();
     return;
   }
   const resp = await fetch("/api/newsletter", {
@@ -46,7 +51,11 @@ newsletterForm.addEventListener("submit", async (e) => {
   });
   const conf = await resp.json();
   if (conf.affectedRows) {
-    alert("Subscrito correctamente");
+    toastLiveExample.children.item(1).innerHTML = "Subscrito correctamente";
+    const toastBootstrap =
+      bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+    contactForm.reset();
+    toastBootstrap.show();
   }
   newsletterForm.reset();
 });
