@@ -9,7 +9,7 @@ import "https://deno.land/std@0.186.0/dotenv/load.ts";
 // SQLite3Connector, MySQLConnector, PostgresConnector...
 const connector = new MySQLConnector({
   database: "desarrollo",
-  host: Deno.env.get("DATABASEADDRES") || "",
+  host: Deno.env.get("DATABASEADDRES") || "localhost",
   username: Deno.env.get("DENOUSER") || "",
   password: Deno.env.get("DENOPASS") || "",
 });
