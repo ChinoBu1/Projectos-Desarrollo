@@ -6,7 +6,9 @@ Implementado en [deno](https://deno.com/runtime) utilizando [Oak](https://deno.l
 
 Para realizar pruebas en local sera necesrio instalar deno y MariaDB o MySQL, una vez clonado el repositorio.
 
-Para introducir los datos la base de datos se debe modiifcar db.ts y ejecutar:
+En db.ts y en api/db.ts se deben añadir las credenciales de la base de datos o incluirlas en un archivo .env
+
+Para introducir los datos la base de datos ejecutar:
 
     deno task initdb
 
