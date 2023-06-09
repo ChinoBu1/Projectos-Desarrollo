@@ -22,7 +22,7 @@ export default {
           }
           break;
         case "past":
-          return client.query(query + " moment in (?,?,?)", [
+          return client.query(query + " moment in (?,?,?) order by start", [
             ...params,
             searchParams.getAll("moment")[0] || "",
             searchParams.getAll("moment")[1] || "",
@@ -35,7 +35,7 @@ export default {
 
     if (searchParams.size) {
       return await client.query(
-        query + " start > ? and  moment in (?,?,?)",
+        query + " start > ? and  moment in (?,?,?) order by start",
         [
           ...params,
           new Date(),

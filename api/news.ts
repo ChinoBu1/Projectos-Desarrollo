@@ -10,7 +10,7 @@ export default {
   },
 
   async getFiltered(urlSearch: URLSearchParams) {
-    return await client.query(`select * from news where date between ? and ?`, [
+    return await client.query(`select * from news where date between ? and ? order by date desc`, [
       urlSearch.get("start") || "",
       urlSearch.get("end") || new Date(),
     ]);
