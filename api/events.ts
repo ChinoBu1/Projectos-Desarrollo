@@ -47,7 +47,7 @@ export default {
     }
 
     return await client.query(
-      "select * from events where start > ?",
+      "select * from events where start > ? order by start",
       [
         new Date(),
       ],
